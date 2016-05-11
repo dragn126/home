@@ -114,7 +114,7 @@ public:
 			tmp = tmp->next;
 			i++;
 		}
-		return i - 1;
+		return i;
 	}
 	virtual T get(int index)
 	{
