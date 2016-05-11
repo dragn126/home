@@ -171,7 +171,7 @@ public:
 	{
 		Linkedlist* tmp = this;
 		int i = 0;
-		while ((i != index) && (tmp->next != NULL) && (i < len()))
+		while ((i != index) && (tmp->next != NULL))
 		{
 			tmp = tmp->next;
 			i++;
@@ -184,7 +184,10 @@ public:
 			delete tmp2;
 			return inf;
 		}
+		else
+		{
 		return this->_default;
+		}
 	}
 	virtual void sort(bool(*f) (T* first, T* second))
 	{
