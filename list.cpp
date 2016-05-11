@@ -144,7 +144,7 @@ public:
 		else
 		{
 			int i = 0;
-			while ((index != i) && (next != NULL))
+			while (index != i)
 			{
 				tmp = tmp->next;
 				i++;
@@ -158,7 +158,7 @@ public:
 		Linkedlist* tmp = this;
 		Linkedlist* tmp2 = new Linkedlist(_data, this->_default);
 		int i = 0;
-		while ((i != index) && (tmp->next != NULL))
+		while (i != index)
 		{
 			tmp = tmp->next;
 			i++;
@@ -171,11 +171,10 @@ public:
 	{
 		Linkedlist* tmp = this;
 		int i = 0;
-		while ((i != index) && (tmp->next != NULL))
+		while (i != index)
 		{
 			tmp = tmp->next;
 			i++;
-		}
 		if (i == index)
 		{
 			Linkedlist* tmp2 = tmp->next;
@@ -187,6 +186,7 @@ public:
 		else
 		{
 		return this->_default;
+		}
 		}
 	}
 	virtual void sort(bool(*f) (T* first, T* second))
