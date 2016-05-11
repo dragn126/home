@@ -1,0 +1,10 @@
+In file included from cur.cpp:13:0:
+ruslan/list.cpp: In instantiation of 'class Linkedlist<std::basic_string<char> >':
+ruslan/list.cpp:217:53:   required from here
+ruslan/list.cpp:210:31: error: new declaration 'AbstractList<std::basic_string<char> >* get_init()'
+  friend AbstractList<string>* get_init();
+                               ^
+ruslan/list.cpp:213:21: error: ambiguates old declaration 'Linkedlist<std::basic_string<char> >* get_init()'
+ Linkedlist<string>* get_init()
+                     ^
+./check.sh: line 24: ./a.out: No such file or directory
