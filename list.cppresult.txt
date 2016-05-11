@@ -2,13 +2,5 @@
 [----------] Global test environment set-up.
 [----------] 7 tests from ListTest
 [ RUN      ] ListTest.ListLen
-cur.cpp:20: Failure
-Value of: l->len()
-  Actual: -1
-Expected: 0
-[  FAILED  ] ListTest.ListLen
+[       OK ] ListTest.ListLen
 [ RUN      ] ListTest.DeleteOne
-cur.cpp:27: Failure
-Value of: l->len()
-  Actual: -1
-Expected: 0
