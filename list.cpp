@@ -207,7 +207,6 @@ public:
 				tmp = tmp->next;
 			}
 	}
-	friend AbstractList<string>* get_init();
 };
 
 Linkedlist<string>* get_init()
