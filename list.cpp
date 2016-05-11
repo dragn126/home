@@ -207,9 +207,10 @@ public:
 				tmp = tmp->next;
 			}
 	}
+    friend AbstractList<string>* get_init();
 };
 
-Linkedlist<string>* get_init()
+AbstractList<string>* get_init()
 {
 	string e("EMPTY!");
 	string d("Hello world!");
