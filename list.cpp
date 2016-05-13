@@ -171,10 +171,11 @@ public:
 	{
 		Linkedlist* tmp = this;
 		int i = 0;
-		while (i != index)
+		while (i != index||tmp->next->next!=NULL)
 		{
 			tmp = tmp->next;
 			i++;
+		}
 		if (i == index)
 		{
 			Linkedlist* tmp2 = tmp->next;
@@ -186,7 +187,6 @@ public:
 		else
 		{
 		return this->_default;
-		}
 		}
 	}
 	virtual void sort(bool(*f) (T* first, T* second))
