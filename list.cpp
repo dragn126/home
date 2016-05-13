@@ -169,6 +169,7 @@ public:
 	}
 	virtual T remove(int index)
 	{
+		cout<<1;
 		Linkedlist* tmp = this;
 		int i = 0;
 		while (i != index||tmp->next->next!=NULL)
@@ -176,18 +177,17 @@ public:
 			tmp = tmp->next;
 			i++;
 		}
+		cout<<2;
 		if (i == index)
 		{
+			cout<<3;
 			Linkedlist* tmp2 = tmp->next;
 			tmp->next = tmp2->next;
 			T inf = tmp2->_data;
 			delete tmp2;
 			return inf;
 		}
-		else
-		{
 		return this->_default;
-		}
 	}
 	virtual void sort(bool(*f) (T* first, T* second))
 	{
