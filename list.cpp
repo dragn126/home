@@ -177,7 +177,7 @@ public:
 			tmp = tmp->next;
 			i++;
 		}
-		cout<<2;
+		cout<<3;
 		if (i == index)
 		{
 			cout<<3;
