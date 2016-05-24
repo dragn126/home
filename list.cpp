@@ -119,38 +119,37 @@ public:
 	}
 	virtual T get(int index)
 	{
-		Linkedlist* tmp = this;
-		if (index >= len() || index < 0)
+		if (index < 0)
 		{
-			return _default;
+			index = 0;
 		}
-		for (int i = 0; i < len(); i++)
+		if (index >= len())
+		{
+			index = len() - 1;
+		}
+		Linkedlist* tmp = next;
+		for (int i = 0; i < index; i++)
 		{
 			tmp = tmp->next;
-			if (index == i)
-			{
-				return tmp->_data;
-			}
 		}
-		return _default;
+		return tmp->_data;
 	}
 	virtual void set(int index, T data)
 	{
-		Linkedlist* tmp = this;
-		if (index >= len() || index < 0)
+		if (index < 0)
 		{
-			return;
+			index = 0;
 		}
-		for (int i=0; i < len(); i++)
+		if (index >= len())
+		{
+			index = len() - 1;
+		}
+		Linkedlist* tmp = next;
+		for (int i = 0; i < index; i++)
 		{
 			tmp = tmp->next;
-			if (index == i)
-			{
-				tmp->_data = data;
-				return;
-			}
 		}
-		return;
+		tmp->_data = data;
 	}
 	virtual void insert(int index, T _data)
 	{
@@ -162,16 +161,16 @@ public:
 		{
 			index = len();
 		}
-		Linkedlist* now = next;
+		Linkedlist* tmp = next;
 		Linkedlist* add = new Linkedlist(_data);
 		Linkedlist* prev = this;
 		for (int i = 0; i < index; i++)
 		{
-			prev = now;
-			now = now->next;
+			prev = tmp;
+			tmp = tmp->next;
 		}
 		prev->next = add;
-		add->next = now;
+		add->next = tmp;
 	}
 	virtual T remove(int index)
 	{
@@ -185,17 +184,17 @@ public:
 			{
 				index = len() - 1;
 			}
-			Linkedlist* now = next;
+			Linkedlist* tmp = next;
 			Linkedlist* prev = this;
 			for (int i = 0; i < index; i++)
 			{
-				prev = now;
-				now = now->next;
+				prev = tmp;
+				tmp = tmp->next;
 			}
-			T tmp = now->_data;
-			prev->next = now->next;
-			delete now;
-			return tmp;
+			T tmp2 = tmp->_data;
+			prev->next = tmp->next;
+			delete tmp;
+			return tmp2;
 		}
 	}
 	virtual void sort(bool(*f) (T* first, T* second))
