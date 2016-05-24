@@ -1,20 +1,12 @@
-[==========] Running 7 tests from 1 test case.
-[----------] Global test environment set-up.
-[----------] 7 tests from ListTest
-[ RUN      ] ListTest.ListLen
-[       OK ] ListTest.ListLen
-[ RUN      ] ListTest.DeleteOne
-[       OK ] ListTest.DeleteOne
-[ RUN      ] ListTest.AddOne
-[       OK ] ListTest.AddOne
-[ RUN      ] ListTest.AddAndCheckOne
-[       OK ] ListTest.AddAndCheckOne
-[ RUN      ] ListTest.PopOne
-[       OK ] ListTest.PopOne
-[ RUN      ] ListTest.PushPop
-[       OK ] ListTest.PushPop
-[ RUN      ] ListTest.PushPop1E3
-[       OK ] ListTest.PushPop1E3
-[----------] Global test environment tear-down
-[==========] 7 tests from 1 test case ran.
-[  PASSED  ] 7 tests.
+In file included from cur.cpp:13:0:
+ruslan/list.cpp: In instantiation of 'T Linkedlist<T>::get(int) [with T = std::basic_string<char>]':
+cur.cpp:201:1:   required from here
+ruslan/list.cpp:124:4: error: return-statement with no value, in function returning 'std::basic_string<char>' [-fpermissive]
+    return;
+    ^
+ruslan/list.cpp: In instantiation of 'T Linkedlist<T>::remove(int) [with T = std::basic_string<char>]':
+cur.cpp:201:1:   required from here
+ruslan/list.cpp:167:4: error: return-statement with no value, in function returning 'std::basic_string<char>' [-fpermissive]
+    return;
+    ^
+./check.sh: line 24: ./a.out: No such file or directory
