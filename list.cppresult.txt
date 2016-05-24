@@ -8,31 +8,13 @@
 [ RUN      ] ListTest.AddOne
 [       OK ] ListTest.AddOne
 [ RUN      ] ListTest.AddAndCheckOne
-cur.cpp:46: Failure
-Value of: l->get(0).c_str()
-  Actual: ""
-Expected: "fail"
-[  FAILED  ] ListTest.AddAndCheckOne
+[       OK ] ListTest.AddAndCheckOne
 [ RUN      ] ListTest.PopOne
 [       OK ] ListTest.PopOne
 [ RUN      ] ListTest.PushPop
-cur.cpp:87: Failure
-Value of: l->pop().c_str()
-  Actual: ""
-Expected: "fail"
-[  FAILED  ] ListTest.PushPop
+[       OK ] ListTest.PushPop
 [ RUN      ] ListTest.PushPop1E3
-cur.cpp:121: Failure
-Value of: l->pop().c_str()
-  Actual: ""
-Expected: "fail"
-[  FAILED  ] ListTest.PushPop1E3
+[       OK ] ListTest.PushPop1E3
 [----------] Global test environment tear-down
 [==========] 7 tests from 1 test case ran.
-[  PASSED  ] 4 tests.
-[  FAILED  ] 3 tests, listed below:
-[  FAILED  ] ListTest.AddAndCheckOne
-[  FAILED  ] ListTest.PushPop
-[  FAILED  ] ListTest.PushPop1E3
-
- 3 FAILED TESTS
+[  PASSED  ] 7 tests.
