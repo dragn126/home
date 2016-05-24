@@ -82,7 +82,7 @@ public:
 	Linkedlist(T default_)
 	{
 		next = NULL;
-		_default = default_;
+		_data = default_;
 	}
 	Linkedlist(T data, T default_)
 	{
