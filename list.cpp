@@ -79,20 +79,20 @@ public:
 	{
 		next = _next;
 	}
-	Linkedlist(T default)
+	Linkedlist(T default_)
 	{
 		next = NULL;
-		_default = default;
+		_default = default_;
 	}
-	Linkedlist(T data, T default)
+	Linkedlist(T data, T default_)
 	{
 		_data = data;
-		_default = default;
+		_default = default_;
 		next = NULL;
 	}
-	Linkedlist(T data, T default, Linkedlist* _next)
+	Linkedlist(T data, T default_, Linkedlist* _next)
 	{
-		_default = default;
+		_default = default_;
 		_data = data;
 		next = _next;
 	}
