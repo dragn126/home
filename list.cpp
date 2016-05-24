@@ -170,20 +170,12 @@ public:
 	}
 	virtual T remove(int index)
 	{
-		if (len() == 0)
+		if (len() == 0 || index < 0 || index > len() - 1)
 		{
 			return _data;
 		}
 		else
 		{
-			if (index < 0)
-			{
-				index = 0;
-			}
-			if (index > len() - 1)
-			{
-				index = len() - 1;
-			}
 			Linkedlist* now = next;
 			Linkedlist* prev = this;
 			for (int i = 0; i < index; i++)
