@@ -121,7 +121,7 @@ public:
 	{
 		if (index < 0 || index >= len())
 		{
-			return;
+			return _default;
 		}
 		Linkedlist* tmp = next;
 		for (int i = 0; i < index; i++)
@@ -134,7 +134,7 @@ public:
 	{
 		if (index < 0 || index >= len())
 		{
-			return;
+			return _default;
 		}
 		Linkedlist* tmp = next;
 		for (int i = 0; i < index; i++)
@@ -147,7 +147,7 @@ public:
 	{
 		if (index < 0 || index >= len())
 		{
-			return;
+			return _default;
 		}
 		Linkedlist* tmp = next;
 		Linkedlist* add = new Linkedlist(_data);
@@ -164,7 +164,7 @@ public:
 	{
 		if (len() == 0 || index < 0)
 		{
-			return;
+			return _default;
 		}
 		else
 		{
