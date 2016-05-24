@@ -1,35 +1,8 @@
-In file included from cur.cpp:13:0:
-ruslan/list.cpp:82:15: error: expected ',' or '...' before 'default'
-  Linkedlist(T default)
-               ^
-ruslan/list.cpp:87:23: error: expected ',' or '...' before 'default'
-  Linkedlist(T data, T default)
-                       ^
-ruslan/list.cpp:93:23: error: expected ',' or '...' before 'default'
-  Linkedlist(T data, T default, Linkedlist* _next)
-                       ^
-ruslan/list.cpp:93:2: error: 'Linkedlist<T>::Linkedlist(T, T)' cannot be overloaded
-  Linkedlist(T data, T default, Linkedlist* _next)
-  ^
-ruslan/list.cpp:87:2: error: with 'Linkedlist<T>::Linkedlist(T, T)'
-  Linkedlist(T data, T default)
-  ^
-ruslan/list.cpp: In constructor 'Linkedlist<T>::Linkedlist(T)':
-ruslan/list.cpp:85:14: error: expected primary-expression before 'default'
-   _default = default;
-              ^
-ruslan/list.cpp:85:14: error: expected ';' before 'default'
-ruslan/list.cpp: In constructor 'Linkedlist<T>::Linkedlist(T, T)':
-ruslan/list.cpp:90:14: error: expected primary-expression before 'default'
-   _default = default;
-              ^
-ruslan/list.cpp:90:14: error: expected ';' before 'default'
-ruslan/list.cpp: In constructor 'Linkedlist<T>::Linkedlist(T, T)':
-ruslan/list.cpp:95:14: error: expected primary-expression before 'default'
-   _default = default;
-              ^
-ruslan/list.cpp:95:14: error: expected ';' before 'default'
-ruslan/list.cpp:97:10: error: '_next' was not declared in this scope
-   next = _next;
-          ^
-./check.sh: line 24: ./a.out: No such file or directory
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from ListTest
+[ RUN      ] ListTest.ListLen
+[       OK ] ListTest.ListLen
+[ RUN      ] ListTest.DeleteOne
+[       OK ] ListTest.DeleteOne
+[ RUN      ] ListTest.AddOne
