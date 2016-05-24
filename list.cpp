@@ -120,39 +120,37 @@ public:
 	virtual T get(int index)
 	{
 		Linkedlist* tmp = this;
-		if ((index >= len()) || (index < 0))
+		if (index >= len())
 		{
-			return this->_default;
+			return tmp->_default;
 		}
-		else
+		for (int i = 0; i < len(); i++)
 		{
-			int i = 0;
-			while (index != i)
+			tmp = tmp->next;
+			if (index == i)
 			{
-				tmp = tmp->next;
-				i++;
+				return tmp->_data;
 			}
-			return tmp->_data;
 		}
+		return tmp->_default;
 	}
-	virtual void set(int index, T _data)
+	virtual void set(int index, T data)
 	{
 		Linkedlist* tmp = this;
-		if ((index >= len()) || (index < 0))
+		if (index >= len())
 		{
 			return;
 		}
-		else
+		for (int i=0; i < len(); i++)
 		{
-			int i = 0;
-			while (index != i)
+			tmp = tmp->next;
+			if (index == i)
 			{
-				tmp = tmp->next;
-				i++;
+				tmp->_data = data;
+				return;
 			}
-			tmp->_data = _data;
-			return;
 		}
+		return;
 	}
 	virtual void insert(int index, T _data)
 	{
