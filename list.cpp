@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 ostream& operator<<(ostream& o, string& s)
 {
@@ -72,28 +73,28 @@ protected:
 public:
 	Linkedlist()
 	{
-		this->next = NULL;
+		next = NULL;
 	}
-	Linkedlist(Linkedlist* next)
+	Linkedlist(Linkedlist* _next)
 	{
-		this->next = next;
+		next = _next;
 	}
-	Linkedlist(T _default)
+	Linkedlist(T default)
 	{
-		this->next = NULL;
-		this->_default = _default;
+		next = NULL;
+		_default = default;
 	}
-	Linkedlist(T _data, T _default)
+	Linkedlist(T data, T default)
 	{
-		this->_data = _data;
-		this->_default = _default;
-		this->next = NULL;
+		_data = data;
+		_default = default;
+		next = NULL;
 	}
-	Linkedlist(T _data, T _default, Linkedlist* next)
+	Linkedlist(T data, T default, Linkedlist* _next)
 	{
-		this->_default = _default;
-		this->_data = _data;
-		this->next = next;
+		_default = default;
+		_data = data;
+		next = _next;
 	}
 	Linkedlist(const Linkedlist& tmp)
 	{
@@ -169,25 +170,32 @@ public:
 	}
 	virtual T remove(int index)
 	{
-		cout<<1;
-		Linkedlist* tmp = this;
-		int i = 0;
-		while (i != index||tmp->next->next!=NULL)
+		if (len() == 0)
 		{
-			tmp = tmp->next;
-			i++;
+			return _data;
 		}
-		cout<<3;
-		if (i == index)
+		else
 		{
-			cout<<3;
-			Linkedlist* tmp2 = tmp->next;
-			tmp->next = tmp2->next;
-			T inf = tmp2->_data;
-			delete tmp2;
-			return inf;
+			if (index < 0)
+			{
+				index = 0;
+			}
+			if (index > len() - 1)
+			{
+				index = len() - 1;
+			}
+			Linkedlist* now = next;
+			Linkedlist* prev = this;
+			for (int i = 0; i < index; i++)
+			{
+				prev = now;
+				now = now->next;
+			}
+			T tmp = now->_data;
+			prev->next = now->next;
+			delete now;
+			return tmp;
 		}
-		return this->_default;
 	}
 	virtual void sort(bool(*f) (T* first, T* second))
 	{
@@ -210,10 +218,9 @@ public:
 				tmp = tmp->next;
 			}
 	}
-    friend AbstractList<string>* get_init();
 };
 
-AbstractList<string>* get_init()
+Linkedlist<string>* get_init()
 {
 	string e("EMPTY!");
 	string d("Hello world!");
