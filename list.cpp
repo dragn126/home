@@ -156,29 +156,40 @@ public:
 	}
 	virtual void insert(int index, T _data)
 	{
-		Linkedlist* tmp = this;
-		Linkedlist* tmp2 = new Linkedlist(_data, this->_default);
-		int i = 0;
-		while (i != index)
+		if (index < 0)
 		{
-			tmp = tmp->next;
-			i++;
+			index = 0;
 		}
-		tmp2->next = tmp->next;
-		tmp->next = tmp2;
-		return;
+		if (index > len())
+		{
+			index = len();
+		}
+		Linkedlist* now = next;
+		Linkedlist* add = new Linkedlist(_data);
+		Linkedlist* prev = this;
+		for (int i = 0; i < index; i++)
+		{
+			prev = now;
+			now = now->next;
+		}
+		prev->next = add;
+		add->next = now;
 	}
 	virtual T remove(int index)
 	{
-		if (len() == 0 || index < 0)
+		if (len() == 0)
 		{
 			return _data;
 		}
 		else
 		{
-			if(index > this->len() - 1)
+			if (index < 0)
 			{
-				index = this->len() - 1;
+				index = 0;
+			}
+			if (index > len() - 1)
+			{
+				index = len() - 1;
 			}
 			Linkedlist* now = next;
 			Linkedlist* prev = this;
@@ -215,6 +226,7 @@ public:
 			}
 	}
 };
+
 
 Linkedlist<string>* get_init()
 {
