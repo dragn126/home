@@ -119,13 +119,9 @@ public:
 	}
 	virtual T get(int index)
 	{
-		if (index < 0)
+		if (index < 0 || index >= len())
 		{
-			index = 0;
-		}
-		if (index >= len())
-		{
-			index = len() - 1;
+			return;
 		}
 		Linkedlist* tmp = next;
 		for (int i = 0; i < index; i++)
@@ -136,13 +132,9 @@ public:
 	}
 	virtual void set(int index, T data)
 	{
-		if (index < 0)
+		if (index < 0 || index >= len())
 		{
-			index = 0;
-		}
-		if (index >= len())
-		{
-			index = len() - 1;
+			return;
 		}
 		Linkedlist* tmp = next;
 		for (int i = 0; i < index; i++)
@@ -153,13 +145,9 @@ public:
 	}
 	virtual void insert(int index, T _data)
 	{
-		if (index < 0)
+		if (index < 0 || index >= len())
 		{
-			index = 0;
-		}
-		if (index > len())
-		{
-			index = len();
+			return;
 		}
 		Linkedlist* tmp = next;
 		Linkedlist* add = new Linkedlist(_data);
@@ -176,7 +164,7 @@ public:
 	{
 		if (len() == 0 || index < 0)
 		{
-			return _data;
+			return;
 		}
 		else
 		{
