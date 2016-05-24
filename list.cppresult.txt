@@ -1,12 +1,43 @@
-In file included from cur.cpp:13:0:
-ruslan/list.cpp: In instantiation of 'void Linkedlist<T>::set(int, T) [with T = std::basic_string<char>]':
-cur.cpp:201:1:   required from here
-ruslan/list.cpp:137:11: error: return-statement with a value, in function returning 'void' [-fpermissive]
-    return _default;
-           ^
-ruslan/list.cpp: In instantiation of 'void Linkedlist<T>::insert(int, T) [with T = std::basic_string<char>]':
-cur.cpp:201:1:   required from here
-ruslan/list.cpp:150:11: error: return-statement with a value, in function returning 'void' [-fpermissive]
-    return _default;
-           ^
-./check.sh: line 24: ./a.out: No such file or directory
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from ListTest
+[ RUN      ] ListTest.ListLen
+[       OK ] ListTest.ListLen
+[ RUN      ] ListTest.DeleteOne
+[       OK ] ListTest.DeleteOne
+[ RUN      ] ListTest.AddOne
+cur.cpp:37: Failure
+Value of: l->len()
+  Actual: 0
+Expected: 1
+[  FAILED  ] ListTest.AddOne
+[ RUN      ] ListTest.AddAndCheckOne
+cur.cpp:46: Failure
+Value of: l->get(0).c_str()
+  Actual: "Hello world!"
+Expected: "fail"
+[  FAILED  ] ListTest.AddAndCheckOne
+[ RUN      ] ListTest.PopOne
+[       OK ] ListTest.PopOne
+[ RUN      ] ListTest.PushPop
+cur.cpp:87: Failure
+Value of: l->pop().c_str()
+  Actual: ""
+Expected: "fail"
+[  FAILED  ] ListTest.PushPop
+[ RUN      ] ListTest.PushPop1E3
+cur.cpp:121: Failure
+Value of: l->pop().c_str()
+  Actual: ""
+Expected: "fail"
+[  FAILED  ] ListTest.PushPop1E3
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test case ran.
+[  PASSED  ] 3 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] ListTest.AddOne
+[  FAILED  ] ListTest.AddAndCheckOne
+[  FAILED  ] ListTest.PushPop
+[  FAILED  ] ListTest.PushPop1E3
+
+ 4 FAILED TESTS
