@@ -120,9 +120,9 @@ public:
 	virtual T get(int index)
 	{
 		Linkedlist* tmp = this;
-		if (index >= len())
+		if (index >= len() || index < 0)
 		{
-			return tmp->_default;
+			return _default;
 		}
 		for (int i = 0; i < len(); i++)
 		{
@@ -132,12 +132,12 @@ public:
 				return tmp->_data;
 			}
 		}
-		return tmp->_default;
+		return _default;
 	}
 	virtual void set(int index, T data)
 	{
 		Linkedlist* tmp = this;
-		if (index >= len())
+		if (index >= len() || index < 0)
 		{
 			return;
 		}
