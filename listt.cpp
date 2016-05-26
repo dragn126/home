@@ -150,18 +150,17 @@ public:
 	}
 	virtual T remove(int index)
 	{
-			Linkedlist* tmp = next;
-			Linkedlist* prev = this;
-			for (int i = 0; i < index; i++)
-			{
-				prev = tmp;
-				tmp = tmp->next;
-			}
-			T tmp2 = tmp->_data;
-			prev->next = tmp->next;
-			delete tmp;
-			return tmp2;
+		Linkedlist* tmp = next;
+		Linkedlist* prev = this;
+		for (int i = 0; i < index; i++)
+		{
+			prev = tmp;
+			tmp = tmp->next;
 		}
+		T tmp2 = tmp->_data;
+		prev->next = tmp->next;
+		delete tmp;
+		return tmp2;
 	}
 	virtual void sort(bool(*f) (T* first, T* second))
 	{
