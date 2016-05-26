@@ -1,24 +1,6 @@
-In file included from cur.cpp:13:0:
-ruslan/listt.cpp:165:2: error: expected ';' after class definition
-  }
-  ^
-ruslan/listt.cpp:166:30: error: 'virtual' outside class declaration
-  virtual void sort(bool(*f) (T* first, T* second))
-                              ^
-ruslan/listt.cpp:166:30: error: variable or field 'sort' declared void
-ruslan/listt.cpp:166:26: error: 'f' was not declared in this scope
-  virtual void sort(bool(*f) (T* first, T* second))
-                          ^
-ruslan/listt.cpp:166:30: error: 'T' was not declared in this scope
-  virtual void sort(bool(*f) (T* first, T* second))
-                              ^
-ruslan/listt.cpp:166:33: error: 'first' was not declared in this scope
-  virtual void sort(bool(*f) (T* first, T* second))
-                                 ^
-ruslan/listt.cpp:166:40: error: 'T' was not declared in this scope
-  virtual void sort(bool(*f) (T* first, T* second))
-                                        ^
-ruslan/listt.cpp:166:43: error: 'second' was not declared in this scope
-  virtual void sort(bool(*f) (T* first, T* second))
-                                           ^
-./check.sh: line 24: ./a.out: No such file or directory
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from ListTest
+[ RUN      ] ListTest.ListLen
+[       OK ] ListTest.ListLen
+[ RUN      ] ListTest.DeleteOne
