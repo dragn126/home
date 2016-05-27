@@ -106,7 +106,7 @@ public:
 			tmp1 = tmp1->next;
 			tmp->next = tmp->next->next;
 		}
-		this = tmp1;
+		this = *tmp1;
 	}
 	Linkedlist operator = (Linkedlist tmp)
 	{
