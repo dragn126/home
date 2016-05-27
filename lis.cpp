@@ -98,13 +98,25 @@ public:
 	}
 	Linkedlist(const Linkedlist& tmp)
 	{
-		this->next = tmp.next;
-		this->_data = tmp._data;
-		this->_default = tmp._default;
+		Linkedlist *tmp1 = new Linkedlist();
+		while (tmp->next != NULL)
+		{
+			Linkedlist *tmp2 = new Linkedlist();
+			tmp2->_data = tmp._data;
+			tmp2->next = NULL;
+			tmp2._default = tmp._default;
+			tmp1->next = tmp2;
+			tmp1 = tmp1->next;
+			tmp->next = tmp->next->next;
+		}
+		this = tmp2;
 	}
 	virtual ~Linkedlist()
 	{
-		next = NULL;
+		if (next != NULL)
+		{
+			delete next;
+		}
 	}
 	virtual int len()
 	{
@@ -204,18 +216,18 @@ public:
 		Linkedlist* other = this;
 		Linkedlist* last = this;
 		for (int i = 0; i<len(); i++)
-			for (int k = 0;k<len() - 1; k++)
+			for (int k = 0; k<len() - 1; k++)
 			{
-				if (f(&(tmp->_data), &(tmp->next->_data)))
-				{
-					tmp2 = tmp->next;
-					other = tmp2->next;
-					last->next = tmp2;
-					tmp2->next = tmp;
-					tmp->next = other;
-				}
-				last = tmp;
-				tmp = tmp->next;
+			if (f(&(tmp->_data), &(tmp->next->_data)))
+			{
+				tmp2 = tmp->next;
+				other = tmp2->next;
+				last->next = tmp2;
+				tmp2->next = tmp;
+				tmp->next = other;
+			}
+			last = tmp;
+			tmp = tmp->next;
 			}
 	}
 };
