@@ -110,14 +110,7 @@ public:
 	}
 	Linkedlist operator = (Linkedlist tmp)
 	{
-		while (tmp->next != NULL)
-		{
-			Linkedlist *tmp2 = new Linkedlist(tmp._data, tmp._default, NULL);
-			this->next = tmp2;
-			this = this->next;
-			tmp->next = tmp->next->next;
-		}
-		return *this;
+		return *LinkedList(tmp);
 	}
 	virtual ~Linkedlist()
 	{
