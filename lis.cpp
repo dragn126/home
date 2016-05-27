@@ -98,18 +98,6 @@ public:
 	}
 	Linkedlist(const Linkedlist& tmp)
 	{
-		Linkedlist *tmp1 = new Linkedlist();
-		while (tmp->next != NULL)
-		{
-			Linkedlist *tmp2 = new Linkedlist(tmp._data, tmp._default, NULL);
-			tmp1->next = tmp2;
-			tmp1 = tmp1->next;
-			tmp->next = tmp->next->next;
-		}
-		this = tmp1;
-	}
-	Linkedlist operator = (Linkedlist tmp)
-	{
 		while (tmp->next != NULL)
 		{
 			Linkedlist *tmp2 = new Linkedlist(tmp._data, tmp._default, NULL);
@@ -117,7 +105,10 @@ public:
 			this = this->next;
 			tmp->next = tmp->next->next;
 		}
-		return *this;
+	}
+	Linkedlist operator = (Linkedlist tmp)
+	{
+		return *LinkedList(tmp);
 	}
 	virtual ~Linkedlist()
 	{
