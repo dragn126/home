@@ -101,10 +101,7 @@ public:
 		Linkedlist *tmp1 = new Linkedlist();
 		while (tmp->next != NULL)
 		{
-			Linkedlist *tmp2 = new Linkedlist();
-			tmp2->_data = tmp._data;
-			tmp2->next = NULL;
-			tmp2._default = tmp._default;
+			Linkedlist *tmp2 = new Linkedlist(tmp._data, tmp._default , NULL);
 			tmp1->next = tmp2;
 			tmp1 = tmp1->next;
 			tmp->next = tmp->next->next;
