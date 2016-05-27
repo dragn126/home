@@ -101,12 +101,24 @@ public:
 		Linkedlist *tmp1 = new Linkedlist();
 		while (tmp->next != NULL)
 		{
-			Linkedlist *tmp2 = new Linkedlist(tmp._data, tmp._default , NULL);
+			Linkedlist *tmp2 = new Linkedlist(tmp._data, tmp._default, NULL);
 			tmp1->next = tmp2;
 			tmp1 = tmp1->next;
 			tmp->next = tmp->next->next;
 		}
 		this = tmp1;
+	}
+	Linkedlist operator = (Linkedlist tmp)
+	{
+		Linkedlist *tmp1 = new Linkedlist();
+		while (tmp->next != NULL)
+		{
+			Linkedlist *tmp2 = new Linkedlist(tmp._data, tmp._default, NULL);
+			tmp1->next = tmp2;
+			tmp1 = tmp1->next;
+			tmp->next = tmp->next->next;
+		}
+		return tmp1;
 	}
 	virtual ~Linkedlist()
 	{
