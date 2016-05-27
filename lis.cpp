@@ -106,7 +106,7 @@ public:
 			tmp1 = tmp1->next;
 			tmp->next = tmp->next->next;
 		}
-		this = tmp2;
+		this = tmp1;
 	}
 	virtual ~Linkedlist()
 	{
